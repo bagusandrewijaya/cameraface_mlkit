@@ -36,8 +36,7 @@ class SmartFaceCamera extends StatefulWidget {
   final IndicatorBuilder? indicatorBuilder;
 
   const SmartFaceCamera(
-   
-      {this.imageResolution = ImageResolution.veryHigh,
+      {this.imageResolution = ImageResolution.medium,
       this.defaultCameraLens,
       this.enableAudio = true,
       this.autoCapture = false,
