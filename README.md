@@ -27,12 +27,3 @@ https://github.com/Conezi/face_camera
 | indicatorAssetImage   | String                  | use this to pass an asset image when IndicatorShape is set to image           |
 | indicatorBuilder      | IndicatorBuilder        | use this to build custom widgets for the face indicator                       |
 
-### Contributions
----  
-
-Contributions of any kind are more than welcome! Feel free to fork and improve `face_camera` in any way you want, make a pull request, or open an issue.
-
-### Support the Library
----  
-
-You can support the library by liking it on pub, staring in on Github and reporting any bugs you encounter.
