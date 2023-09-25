@@ -74,9 +74,7 @@ class _MyAppState extends State<MyApp> {
                         path.add(image!.path);
                         TakeStream.center = true;
                       });
-                    }
-
-                    if (keterangan.toLowerCase() !=
+                    } else if (keterangan.toLowerCase() !=
                             "tidak menghadap kiri atau kanan" &&
                         !TakeStream.center &&
                         keteranganz.toLowerCase() ==
@@ -87,9 +85,7 @@ class _MyAppState extends State<MyApp> {
                               Text('gambar anda harusnya menghadap tengah'),
                         ),
                       );
-                    }
-
-                    if (keterangan.toLowerCase() == "menghadap kanan" &&
+                    } else if (keterangan.toLowerCase() == "menghadap kanan" &&
                         TakeStream.center &&
                         !TakeStream.right &&
                         !TakeStream.left &&
@@ -105,9 +101,7 @@ class _MyAppState extends State<MyApp> {
                           content: Text('gambar anda di ambil'),
                         ),
                       );
-                    }
-
-                    if (keterangan.toLowerCase() != "menghadap kanan" &&
+                    } else if (keterangan.toLowerCase() != "menghadap kanan" &&
                         TakeStream.center &&
                         !TakeStream.right &&
                         !TakeStream.left &&
@@ -118,9 +112,7 @@ class _MyAppState extends State<MyApp> {
                           content: Text('gambar anda harusnya menghadap kanan'),
                         ),
                       );
-                    }
-
-                    if (keterangan.toLowerCase() == "menghadap kiri" &&
+                    } else if (keterangan.toLowerCase() == "menghadap kiri" &&
                         TakeStream.center &&
                         TakeStream.right &&
                         !TakeStream.left &&
@@ -135,9 +127,7 @@ class _MyAppState extends State<MyApp> {
                           content: Text('gambar kiri diambil'),
                         ),
                       );
-                    }
-
-                    if (keterangan.toLowerCase() != "menghadap kiri" &&
+                    } else if (keterangan.toLowerCase() != "menghadap kiri" &&
                         TakeStream.center &&
                         TakeStream.right &&
                         !TakeStream.left &&
@@ -188,14 +178,14 @@ class _MyAppState extends State<MyApp> {
                   ),
                 ),
               ),
-              Positioned(
-                  child: Column(
-                children: [
-                  Row(
-                    children: [Icon(Icons.face), Text("yes")],
-                  )
-                ],
-              )),
+              // Positioned(
+              //     child: Column(
+              //   children: [
+              //     Row(
+              //       children: [Icon(Icons.face), Text("yes")],
+              //     )
+              //   ],
+              // )),
               Container(
                 margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.75,

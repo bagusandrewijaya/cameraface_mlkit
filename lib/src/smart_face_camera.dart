@@ -36,7 +36,7 @@ class SmartFaceCamera extends StatefulWidget {
   final IndicatorBuilder? indicatorBuilder;
 
   const SmartFaceCamera(
-      {this.imageResolution = ImageResolution.medium,
+      {this.imageResolution = ImageResolution.low,
       this.defaultCameraLens,
       this.enableAudio = true,
       this.autoCapture = false,
@@ -175,7 +175,6 @@ class _SmartFaceCameraState extends State<SmartFaceCamera>
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     final CameraController? cameraController = _controller;
-
     // App state changed before we got the chance to initialize.
     if (cameraController == null || !cameraController.value.isInitialized) {
       return;
@@ -183,8 +182,18 @@ class _SmartFaceCameraState extends State<SmartFaceCamera>
 
     if (state == AppLifecycleState.inactive) {
       cameraController.stopImageStream();
+      // App screen turned off
+      if (cameraController.value.isStreamingImages) {
+        // Stop stream only If it's streaming
+        cameraController.stopImageStream();
+      }
+    } else if (state == AppLifecycleState.paused) {
     } else if (state == AppLifecycleState.resumed) {
       _startImageStream();
+      // Start stream only If it's not streaming
+      if (!cameraController.value.isStreamingImages) {
+        _startImageStream();
+      }
     }
   }
 
